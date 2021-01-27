@@ -24,7 +24,7 @@ version=$(./version.sh)
 #docker push $user/$image:latest
 
 # Push GCR docker images
-./tmp/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
+
 docker tag $user/$image:latest gcr.io/$gcr_project/$image:latest
 docker tag $user/$image:latest gcr.io/$gcr_project/$image:$version
 docker push gcr.io/$gcr_project/$image:latest
